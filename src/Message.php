@@ -29,7 +29,7 @@ final class Message implements MessageInterface
     ) {
         $array = [];
         foreach ($translate as $key => $value) {
-            $value = (string) $value;
+            $value = strval($value);
             $array["%{$key}%"] = $value;
             $array["{{{$key}}}"] = $value;
             $array["{{ {$key} }}"] = $value;
