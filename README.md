@@ -17,15 +17,72 @@
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=chevere_message&metric=coverage)](https://sonarcloud.io/dashboard?id=chevere_message)
 [![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=chevere_message&metric=sqale_index)](https://sonarcloud.io/dashboard?id=chevere_message)
 [![CodeFactor](https://www.codefactor.io/repository/github/chevere/message/badge)](https://www.codefactor.io/repository/github/chevere/message)
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/37a9acc4f6bc49b89a898302fc9330f4)](https://app.codacy.com/gh/chevere/message/dashboard)
+
+![Message](.github/banner/message-logo.svg)
+
+## Summary
+
+Message enables to create strings with template tags support.
+
+## Installing
+
+Message is available through [Packagist](https://packagist.org/packages/chevere/message) and the repository source is at [chevere/message](https://github.com/chevere/message).
+
+```sh
+composer require chevere/message
+```
+
+## Creating a Message
+
+Use function `message` to create a Message by passing the message template. Use named named arguments to define replacement pairs.
+
+```php
+use function Chevere\Message\message;
+
+$message = message(
+    'Hello, **%tag%**!',
+    tag: 'World'
+);
+```
+
+🪄 Message supports `%tag%`, `{{tag}}` and `{{ tag }}` replacement template tags.
+
+## To string
+
+The `__toString` method return the message with translated placeholders.
+
+```php
+$message->__toString();
+// Hello, **World**!
+```
+
+## Utility methods
+
+### Template
+
+Use `template` method to return the message template.
+
+```php
+$message->replacements();
+// Hello, **%tag%**!
+```
+
+### Replacements
+
+Use `replacements` method to read message replacement pairs.
+
+```php
+$message->replacements();
+// ['tag' => 'World']
+```
 
 ## Documentation
 
-Documentation is available at [chevere.org](https://chevere.org/).
+Documentation is available at [chevere.org](https://chevere.org/packages/message).
 
 ## License
 
-Copyright 2023 [Rodolfo Berrios A.](https://rodolfoberrios.com/)
+Copyright 2024 [Rodolfo Berrios A.](https://rodolfoberrios.com/)
 
 Chevere is licensed under the Apache License, Version 2.0. See [LICENSE](LICENSE) for the full license text.
 

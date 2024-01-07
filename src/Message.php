@@ -21,7 +21,7 @@ final class Message implements MessageInterface
     /**
      * @var array<string, string>
      */
-    private array $trTable = [];
+    private array $replacements = [];
 
     public function __construct(
         private string $template,
@@ -34,12 +34,12 @@ final class Message implements MessageInterface
             $array["{{{$key}}}"] = $value;
             $array["{{ {$key} }}"] = $value;
         }
-        $this->trTable = $array;
+        $this->replacements = $array;
     }
 
     public function __toString(): string
     {
-        return strtr($this->template, $this->trTable);
+        return strtr($this->template, $this->replacements);
     }
 
     public function template(): string
@@ -47,18 +47,8 @@ final class Message implements MessageInterface
         return $this->template;
     }
 
-    public function trTable(): array
+    public function replacements(): array
     {
-        return $this->trTable;
-    }
-
-    public function toConsole(): string
-    {
-        return $this->__toString();
-    }
-
-    public function toHtml(): string
-    {
-        return $this->__toString();
+        return $this->replacements;
     }
 }

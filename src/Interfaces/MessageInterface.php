@@ -15,9 +15,6 @@ namespace Chevere\Message\Interfaces;
 
 use Stringable;
 
-/**
- * Describes the component in charge of handling rich system messages for CLI and HTML.
- */
 interface MessageInterface extends Stringable
 {
     /**
@@ -35,15 +32,5 @@ interface MessageInterface extends Stringable
      *
      * @return array<string, string>
      */
-    public function trTable(): array;
-
-    /**
-     * Returns a console message representation.
-     */
-    public function toConsole(): string;
-
-    /**
-     * Returns a HTML message representation.
-     */
-    public function toHtml(): string;
+    public function replacements(): array;
 }

@@ -24,10 +24,8 @@ final class MessageTest extends TestCase
         $var = 'message';
         $message = new Message($var);
         $this->assertSame($var, $message->template());
-        $this->assertSame([], $message->trTable());
+        $this->assertSame([], $message->replacements());
         $this->assertSame($var, $message->__toString());
-        $this->assertSame($var, $message->toConsole());
-        $this->assertSame($var, $message->toHtml());
     }
 
     public function testTranslate(): void
@@ -49,11 +47,9 @@ final class MessageTest extends TestCase
                 '{{translate}}' => $replace,
                 '{{ translate }}' => $replace,
             ],
-            $message->trTable()
+            $message->replacements()
         );
         $this->assertSame($varTr, $message->__toString());
-        $this->assertSame($varTr, $message->toConsole());
-        $this->assertSame($varTr, $message->toHtml());
     }
 
     public function testFunction(): void
