@@ -82,7 +82,7 @@ Documentation is available at [chevere.org](https://chevere.org/packages/message
 
 ## License
 
-Copyright 2024 [Rodolfo Berrios A.](https://rodolfoberrios.com/)
+Copyright [Rodolfo Berrios A.](https://rodolfoberrios.com/)
 
 Chevere is licensed under the Apache License, Version 2.0. See [LICENSE](LICENSE) for the full license text.
 
