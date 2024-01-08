@@ -1,6 +1,6 @@
 {
     "name": "chevere/message",
-    "description": "A chevere message package",
+    "description": "Strings with template tags support",
     "homepage": "https://chevere.org",
     "type": "library",
     "license": "Apache-2.0",
