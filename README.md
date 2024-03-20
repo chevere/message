@@ -18,8 +18,6 @@
 [![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=chevere_message&metric=sqale_index)](https://sonarcloud.io/dashboard?id=chevere_message)
 [![CodeFactor](https://www.codefactor.io/repository/github/chevere/message/badge)](https://www.codefactor.io/repository/github/chevere/message)
 
-![Message](.github/banner/message-logo.svg)
-
 ## Summary
 
 Message enables to create strings with template tags support.
